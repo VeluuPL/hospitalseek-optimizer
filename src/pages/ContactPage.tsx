@@ -72,8 +72,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-accent">Email</h3>
-                    <p className="text-gray-600">info@bestcarenavigators.com</p>
-                    <p className="text-gray-600">support@bestcarenavigators.com</p>
+                    <p className="text-gray-600">vsvpl99@gmail.com</p>
                   </div>
                 </div>
                 
@@ -83,8 +82,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-accent">Phone</h3>
-                    <p className="text-gray-600">Main: (800) 123-4567</p>
-                    <p className="text-gray-600">Support: (800) 123-4568</p>
+                    <p className="text-gray-600">(314) 278-4306</p>
                   </div>
                 </div>
                 
@@ -194,7 +192,7 @@ const ContactPage = () => {
         </div>
       </section>
       
-      {/* Footer (same as landing page) */}
+      {/* Footer */}
       <footer className="bg-accent text-white py-12 mt-auto">
         <div className="container mx-auto px-4">
           
@@ -219,11 +217,11 @@ const ContactPage = () => {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 mr-2" />
-                  <span>info@bestcarenavigators.com</span>
+                  <span>vsvpl99@gmail.com</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 mr-2" />
-                  <span>(800) 123-4567</span>
+                  <span>(314) 278-4306</span>
                 </li>
               </ul>
             </div>
