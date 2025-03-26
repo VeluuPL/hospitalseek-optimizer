@@ -31,8 +31,8 @@ const LandingPage = () => {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" 
-              alt="Healthcare professional using laptop" 
+              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop" 
+              alt="Doctor consulting with patient" 
               className="rounded-lg shadow-xl animate-fade-in w-full h-auto"
             />
             <div className="absolute inset-0 bg-primary/10 rounded-lg"></div>
