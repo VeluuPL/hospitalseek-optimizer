@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
-import { Award, BarChart, Database, Shield, Clock, Users } from 'lucide-react';
+import { Award, BarChart, Database, Shield, Clock, Users, Mail, Phone } from 'lucide-react';
 
 const AboutPage = () => {
   return (

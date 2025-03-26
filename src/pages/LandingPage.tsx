@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { MapPin, Percent, Clock, Shield, ArrowRight, Users, Award } from 'lucide-react';
+import { MapPin, Percent, Clock, Shield, ArrowRight, Users, Award, Mail, Phone } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 
 const LandingPage = () => {
