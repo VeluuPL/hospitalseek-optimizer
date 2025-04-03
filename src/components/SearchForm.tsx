@@ -5,21 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Search } from 'lucide-react';
 
-const conditions = [
-  "Heart Surgery",
-  "Joint Replacement",
-  "Cancer Treatment",
-  "Neurosurgery",
-  "Orthopedic Surgery",
-  "Cardiac Care",
-  "Stroke Care",
-];
-
 interface SearchFormProps {
   onSearch: (condition: string, zipCode: string) => void;
+  conditions?: string[]; // Make conditions optional and passed from parent
 }
 
-const SearchForm = ({ onSearch }: SearchFormProps) => {
+const SearchForm = ({ onSearch, conditions = [] }: SearchFormProps) => {
   const [selectedCondition, setSelectedCondition] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [error, setError] = useState("");
