@@ -24,7 +24,7 @@ const Navigation = () => {
           </Link>
           <Link to="/contact" className="flex items-center space-x-1 text-accent hover:text-primary transition-colors">
             <Mail size={18} />
-            <span>Contact</span>
+            <span>Contact Us</span>
           </Link>
           
           <Button asChild>

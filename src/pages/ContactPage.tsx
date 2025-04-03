@@ -72,7 +72,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-accent">Email</h3>
-                    <p className="text-gray-600">vsvpl99@gmail.com</p>
+                    <p className="text-gray-600">info@bestcarenavigators.com</p>
                   </div>
                 </div>
                 
@@ -82,7 +82,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-accent">Phone</h3>
-                    <p className="text-gray-600">(314) 278-4306</p>
+                    <p className="text-gray-600">(800) 123-4567</p>
                   </div>
                 </div>
                 
@@ -208,7 +208,7 @@ const ContactPage = () => {
               <ul className="space-y-2">
                 <li><a href="/" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
                 <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
                 <li><a href="/search" className="text-gray-300 hover:text-white transition-colors">Find Hospitals</a></li>
               </ul>
             </div>
@@ -217,11 +217,11 @@ const ContactPage = () => {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 mr-2" />
-                  <span>vsvpl99@gmail.com</span>
+                  <span>info@bestcarenavigators.com</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 mr-2" />
-                  <span>(314) 278-4306</span>
+                  <span>(800) 123-4567</span>
                 </li>
               </ul>
             </div>

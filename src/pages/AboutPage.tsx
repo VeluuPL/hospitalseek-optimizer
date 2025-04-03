@@ -47,8 +47,8 @@ const AboutPage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1200&auto=format&fit=crop" 
-                alt="Healthcare technology" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" 
+                alt="Healthcare professionals" 
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -115,54 +115,7 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Our Team */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-accent text-center mb-12">Meet Our Team</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-48 h-48 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop" 
-                  alt="Jennifer Chen" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-accent">Jennifer Chen</h3>
-              <p className="text-primary font-medium">Health Informatics Grad Student</p>
-              <p className="text-gray-600 mt-2">Specializing in healthcare quality metrics and data visualization.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-48 h-48 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop" 
-                  alt="Michael Washington" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-accent">Michael Washington</h3>
-              <p className="text-primary font-medium">Data Science Grad Student</p>
-              <p className="text-gray-600 mt-2">Leading our machine learning efforts and predictive analytics models.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-48 h-48 bg-gray-200 rounded-full mx-auto mb-4 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop" 
-                  alt="Sarah Reynolds" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-accent">Sarah Reynolds</h3>
-              <p className="text-primary font-medium">Healthcare Administration Grad Student</p>
-              <p className="text-gray-600 mt-2">Focusing on patient advocacy and healthcare system navigation.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Footer (same as landing page) */}
+      {/* Footer */}
       <footer className="bg-accent text-white py-12 mt-auto">
         <div className="container mx-auto px-4">
           
@@ -178,7 +131,7 @@ const AboutPage = () => {
               <ul className="space-y-2">
                 <li><a href="/" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
                 <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
                 <li><a href="/search" className="text-gray-300 hover:text-white transition-colors">Find Hospitals</a></li>
               </ul>
             </div>
@@ -187,7 +140,7 @@ const AboutPage = () => {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 mr-2" />
-                  <span>team@bestcarenavigators.edu</span>
+                  <span>info@bestcarenavigators.com</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 mr-2" />
