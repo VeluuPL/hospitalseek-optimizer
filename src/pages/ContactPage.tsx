@@ -1,9 +1,57 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+
+const reviewSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  comment: z.string().min(5, "Comment must be at least 5 characters"),
+});
+
+type ReviewFormValues = z.infer<typeof reviewSchema>;
 
 const ContactPage = () => {
+  const { toast } = useToast();
+  const [reviews, setReviews] = useState<ReviewFormValues[]>([
+    {
+      name: "Sarah Johnson",
+      email: "sarah.j@example.com",
+      comment: "This website helped me find a hospital with great cardiovascular care for my father. The search was easy and the ratings were accurate based on our experience."
+    },
+    {
+      name: "Michael Chen",
+      email: "m.chen@example.com",
+      comment: "I was able to compare different hospitals in my area for orthopedic surgery. Saved me a lot of time and helped me make an informed decision."
+    }
+  ]);
+
+  const form = useForm<ReviewFormValues>({
+    resolver: zodResolver(reviewSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      comment: ""
+    }
+  });
+
+  const onSubmit = (data: ReviewFormValues) => {
+    setReviews([data, ...reviews]);
+    form.reset();
+    
+    toast({
+      title: "Thank you for your feedback!",
+      description: "Your comment has been added successfully.",
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -66,6 +114,97 @@ const ContactPage = () => {
               <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
               <p className="text-gray-600">Saturday: 10:00 AM - 2:00 PM EST</p>
               <p className="text-gray-600">Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Review Section */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center mb-8">
+              <MessageSquare className="h-6 w-6 text-primary mr-3" />
+              <h2 className="text-3xl font-semibold text-accent">Share Your Experience</h2>
+            </div>
+            
+            <p className="text-lg text-gray-600 mb-8">
+              We value your feedback! Let us know how our website has helped you find the right healthcare provider.
+            </p>
+            
+            {/* Review Form */}
+            <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder="Your email" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  
+                  <FormField
+                    control={form.control}
+                    name="comment"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your Comment</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Share how our website helped you..." 
+                            className="min-h-32" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <Button type="submit" className="w-full md:w-auto">
+                    Submit Feedback
+                  </Button>
+                </form>
+              </Form>
+            </div>
+            
+            {/* Existing Reviews */}
+            <div>
+              <h3 className="text-xl font-semibold text-accent mb-6">What Others Are Saying</h3>
+              
+              <div className="space-y-6">
+                {reviews.map((review, index) => (
+                  <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                    <div className="flex justify-between items-start mb-4">
+                      <h4 className="font-semibold text-lg text-accent">{review.name}</h4>
+                    </div>
+                    <p className="text-gray-600">{review.comment}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
