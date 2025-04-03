@@ -7,9 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Download } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 
-// Temporary sample conditions until database connection is implemented
-const tempConditions = ["Heart Surgery", "Joint Replacement", "Cancer Treatment"];
-
 // Hospital type definition
 interface Hospital {
   id: number;
@@ -21,7 +18,15 @@ interface Hospital {
 
 const SearchPage = () => {
   const [searchResults, setSearchResults] = useState<Hospital[] | null>(null);
+  const [conditions, setConditions] = useState<string[]>([]);
   const { toast } = useToast();
+
+  // In a real implementation, this would fetch data from an API
+  React.useEffect(() => {
+    // This will be replaced with actual API call
+    console.log("Component mounted - would fetch conditions from API here");
+    // setConditions([...]) will be populated from database
+  }, []);
 
   const handleSearch = async (condition: string, zipCode: string) => {
     // Placeholder for future API call
@@ -59,7 +64,7 @@ const SearchPage = () => {
           </p>
         </div>
 
-        <SearchForm onSearch={handleSearch} conditions={tempConditions} />
+        <SearchForm onSearch={handleSearch} conditions={conditions} />
 
         {searchResults && searchResults.length > 0 && (
           <div className="mt-12 space-y-8 animate-fade-in">
